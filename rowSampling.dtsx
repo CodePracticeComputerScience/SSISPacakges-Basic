@@ -1,0 +1,686 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/2/2020 4:21:28 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="USER-PC11301441"
+  DTS:CreatorName="user-PC11301441\user"
+  DTS:DTSID="{98BBB85E-D13A-4CC6-863A-6F687B87B77A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.6024.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="rowSampling"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{670DAB9C-4901-4BAB-9868-170EE78D134D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{d92d2b75-bfdb-4cc1-a5a5-5c1b1cbac240}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\others"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="others"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\others.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\others.Inputs[Union All Input 1].Columns[EmployeeId]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeId"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[EmployeeId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\others.Outputs[Union All Output 1].Columns[EmployeeId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\others.Inputs[Union All Input 1].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\others.Outputs[Union All Output 1].Columns[Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\others.Inputs[Union All Input 1].Columns[ManagerId]"
+                      cachedDataType="i4"
+                      cachedName="ManagerId"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[ManagerId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\others.Outputs[Union All Output 1].Columns[ManagerId]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\others.Inputs[Union All Input 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\others.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\others.Outputs[Union All Output 1].Columns[EmployeeId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\others.Outputs[Union All Output 1].Columns[EmployeeId]"
+                      name="EmployeeId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\others.Outputs[Union All Output 1].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\others.Outputs[Union All Output 1].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\others.Outputs[Union All Output 1].Columns[ManagerId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\others.Outputs[Union All Output 1].Columns[ManagerId]"
+                      name="ManagerId" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\random selected sample"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="random selected sample"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\random selected sample.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\random selected sample.Inputs[Union All Input 1].Columns[EmployeeId]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeId"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[EmployeeId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\random selected sample.Outputs[Union All Output 1].Columns[EmployeeId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\random selected sample.Inputs[Union All Input 1].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\random selected sample.Outputs[Union All Output 1].Columns[Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\random selected sample.Inputs[Union All Input 1].Columns[ManagerId]"
+                      cachedDataType="i4"
+                      cachedName="ManagerId"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[ManagerId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\random selected sample.Outputs[Union All Output 1].Columns[ManagerId]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\random selected sample.Inputs[Union All Input 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\random selected sample.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\random selected sample.Outputs[Union All Output 1].Columns[EmployeeId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\random selected sample.Outputs[Union All Output 1].Columns[EmployeeId]"
+                      name="EmployeeId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\random selected sample.Outputs[Union All Output 1].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\random selected sample.Outputs[Union All Output 1].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\random selected sample.Outputs[Union All Output 1].Columns[ManagerId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\random selected sample.Outputs[Union All Output 1].Columns[ManagerId]"
+                      name="ManagerId" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Row Sampling"
+              componentClassID="Microsoft.RowSampling"
+              contactInfo="Row Sampling;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Randomly samples a specific number of rows from an input data flow. For example, use it randomly select products to feature on your Web site."
+              name="Row Sampling">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of rows in the sample."
+                  expressionType="Notify"
+                  name="SamplingValue">3</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the seed for the random number generator."
+                  name="SamplingSeed">0</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Row Sampling.Inputs[Row Sampling Input 1]"
+                  name="Row Sampling Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Inputs[Row Sampling Input 1].Columns[EmployeeId]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeId"
+                      lineageId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[EmployeeId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Inputs[Row Sampling Input 1].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Inputs[Row Sampling Input 1].Columns[ManagerId]"
+                      cachedDataType="i4"
+                      cachedName="ManagerId"
+                      lineageId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[ManagerId]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output]"
+                  name="Sampling Selected Output">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output for rows in the sample"
+                      name="Selected">true</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[EmployeeId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[EmployeeId]"
+                      name="EmployeeId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[EmployeeId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[ManagerId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[ManagerId]"
+                      name="ManagerId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[ManagerId]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output]"
+                  name="Sampling Unselected Output">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output for rows in the sample"
+                      name="Selected">false</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[EmployeeId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[EmployeeId]"
+                      name="EmployeeId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[EmployeeId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[ManagerId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[ManagerId]"
+                      name="ManagerId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[ManagerId]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\tblEmployee"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="tblEmployee"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tblEmployee]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\tblEmployee.Connections[OleDbConnection]"
+                  connectionManagerID="{EBA0DB29-794F-4632-840A-7E125354E9D9}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[USER-PC11301441.sampleDatabase]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[EmployeeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].ExternalColumns[EmployeeId]"
+                      lineageId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[EmployeeId]"
+                      name="EmployeeId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[ManagerId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].ExternalColumns[ManagerId]"
+                      lineageId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].Columns[ManagerId]"
+                      name="ManagerId"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].ExternalColumns[EmployeeId]"
+                      dataType="i4"
+                      name="EmployeeId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output].ExternalColumns[ManagerId]"
+                      dataType="i4"
+                      name="ManagerId" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Error Output].Columns[EmployeeId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Error Output].Columns[EmployeeId]"
+                      name="EmployeeId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Error Output].Columns[ManagerId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Error Output].Columns[ManagerId]"
+                      name="ManagerId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Row Sampling.Inputs[Row Sampling Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\tblEmployee.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sampling Selected Output]"
+              endId="Package\Data Flow Task\random selected sample.Inputs[Union All Input 1]"
+              name="Sampling Selected Output"
+              startId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sampling Unselected Output]"
+              endId="Package\Data Flow Task\others.Inputs[Union All Input 1]"
+              name="Sampling Unselected Output"
+              startId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="220,142" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Data Flow Task\tblEmployee"
+          TopLeft="192,19" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Data Flow Task\Row Sampling"
+          TopLeft="186,106" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="259.75,61">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Data Flow Task\random selected sample"
+          TopLeft="99,221" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sampling Selected Output]"
+          TopLeft="236,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-40.5,73"
+              Start="0,0"
+              End="-40.5,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6747967479675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6747967479675"
+                    Point2="0,29.6747967479675"
+                    Point3="-4,29.6747967479675" />
+                  <mssgle:LineSegment
+                    End="-36.5,29.6747967479675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-36.5,29.6747967479675"
+                    Point2="-40.5,29.6747967479675"
+                    Point3="-40.5,33.6747967479675" />
+                  <mssgle:LineSegment
+                    End="-40.5,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-86.8800390625,34.6747967479675,133.260078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="109,42"
+          Id="Package\Data Flow Task\others"
+          TopLeft="455,221" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sampling Unselected Output]"
+          TopLeft="282,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="227.5,73"
+              Start="0,0"
+              End="227.5,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6747967479675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6747967479675"
+                    Point2="0,29.6747967479675"
+                    Point3="4,29.6747967479675" />
+                  <mssgle:LineSegment
+                    End="223.5,29.6747967479675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="223.5,29.6747967479675"
+                    Point2="227.5,29.6747967479675"
+                    Point3="227.5,33.6747967479675" />
+                  <mssgle:LineSegment
+                    End="227.5,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="50.29294921875,34.6747967479675,126.9141015625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="percentage sampling is also similar"
+          ParentId="Package\Data Flow Task"
+          Size="228,60"
+          Id="eb7cae69-1bab-40f4-a6e8-998e64dff655"
+          TopLeft="405,42">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="11.25"
+              Color="#FF000000"
+              Weight="Bold">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

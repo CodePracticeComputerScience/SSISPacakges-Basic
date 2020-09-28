@@ -1,0 +1,43 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/2/2020 4:35:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="USER-PC11301441"
+  DTS:CreatorName="user-PC11301441\user"
+  DTS:DTSID="{C905A5C4-DB32-4A06-B27A-6CA2EA78057B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.6024.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="info"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{A00D9744-E32D-4F1B-A916-C344BEC05EF7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <AnnotationLayout
+          Text="union all&#xD;&#xA;&#xD;&#xA;sync and async fully and partially blocking transformation&#xD;&#xA;&#xD;&#xA;-sort async and fully blocking&#xD;&#xA;-unino all and aggregrate partially blocking"
+          ParentId="Package"
+          FontInfo="{x:Null}"
+          Size="332,120"
+          Id="c51fa29b-3f5d-49f5-af96-809f607cc566"
+          TopLeft="170,79" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
